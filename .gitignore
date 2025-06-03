@@ -5,3 +5,4 @@ cpu.pprof
 *.swp
 .DS_Store
 .env
+.obsidian
