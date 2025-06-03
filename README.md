@@ -7,7 +7,7 @@ A distributed Linux kernel security monitoring and alerting system for real-time
 KernelAlert is a security system that monitors critical Linux kernel components and sends notifications when suspicious changes are detected. The system consists of lightweight agents on monitored hosts and a centralized server for analysis and alerting.
 
 ## Architecture
-![[Pasted image 20250603183224.png]]
+![[images/arch.png]]
 
 - **Agent**: Collects kernel data and sends reports to server [1](#1-0) 
 - **Server**: Analyzes reports, detects changes, and sends notifications [2](#1-1) 
