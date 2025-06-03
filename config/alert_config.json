@@ -1,0 +1,66 @@
+{
+  "default_enabled": true,
+  "host_exceptions": {
+    "dev-server": [
+      "AppArmor.*disabled",
+      "SELinux.*permissive"
+    ],
+    "test-host": [
+      "unprivileged_bpf_disabled.*0"
+    ]
+  },
+  "rules": {
+    "selinux": {
+      "enabled": false,
+      "severity": "high",
+      "description": "SELinux status alerts",
+      "exceptions": [
+        ".*permissive.*on development servers"
+      ],
+      "conditions": []
+    },
+    "apparmor": {
+      "enabled": false,
+      "severity": "high",
+      "description": "AppArmor status alerts",
+      "exceptions": [
+        "AppArmor.*disabled.*on systems without AppArmor support"
+      ],
+      "conditions": []
+    },
+    "modules": {
+      "enabled": true,
+      "severity": "high",
+      "description": "Kernel module alerts",
+      "exceptions": [
+        ".*nvidia.*on systems without NVIDIA GPU"
+      ],
+      "conditions": []
+    },
+    "ebpf": {
+      "enabled": true,
+      "severity": "high",
+      "description": "eBPF program and event alerts",
+      "exceptions": [],
+      "conditions": []
+    },
+    "files": {
+      "enabled": true,
+      "severity": "medium",
+      "description": "File integrity alerts",
+      "exceptions": [
+        "/proc/sys/kernel/random/.*"
+      ],
+      "conditions": []
+    },
+    "params": {
+      "enabled": true,
+      "severity": "medium",
+      "description": "Kernel parameter alerts",
+      "exceptions": [
+        "kernel\\.randomize_va_space.*on test systems"
+      ],
+      "conditions": []
+    }
+  }
+} 

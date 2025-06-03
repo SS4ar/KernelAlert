@@ -1,0 +1,15 @@
+[Unit]
+Description=Kernel Alert Agent
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Environment=SERVER_URL=https://localhost:8443/report
+Environment=CHECK_INTERVAL=300
+ExecStart=/usr/local/bin/kernalert-agent
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 
